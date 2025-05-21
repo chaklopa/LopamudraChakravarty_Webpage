@@ -6,12 +6,14 @@ const ProjectCard = ({
   description,
   technologies,
   link,
+  imageSrc,
   delay = 0
 }: {
   title: string;
   description: string;
   technologies: string[];
   link?: string;
+  imageSrc?: string;
   delay?: number;
 }) => {
   return (
@@ -19,6 +21,15 @@ const ProjectCard = ({
       className="project-card fade-up" 
       style={{ animationDelay: `${delay}s` }}
     >
+      {imageSrc && (
+        <div className="w-full h-48 overflow-hidden">
+          <img 
+            src={imageSrc} 
+            alt={title} 
+            className="w-full h-full object-cover object-center"
+          />
+        </div>
+      )}
       <div className="p-6 md:p-8 space-y-4">
         <h3 className="text-xl md:text-2xl font-medium">{title}</h3>
         <p className="text-foreground/70 line-clamp-4">
@@ -70,7 +81,8 @@ const Projects = () => {
         "GitHub Pages", 
         "Image Processing"
       ],
-      link: "#"
+      link: "#",
+      imageSrc: "/lovable-uploads/b988040e-c18e-436b-babf-ff6ed02a5e17.png"
     },
     {
       title: "Airbnb Market Analysis for Strategic Hosting",
@@ -81,7 +93,8 @@ const Projects = () => {
         "Statistical Analysis", 
         "Data Visualization"
       ],
-      link: "#"
+      link: "#",
+      imageSrc: "/lovable-uploads/9fe2207c-3601-4652-bb69-acbb15a7001c.png"
     },
     {
       title: "Predicting Lung Cancer Risk Using Machine Learning",
@@ -93,7 +106,8 @@ const Projects = () => {
         "Scikit-learn", 
         "Matplotlib"
       ],
-      link: "#"
+      link: "#",
+      imageSrc: "/lovable-uploads/852c2213-d519-4d55-bd3a-28a484024145.png"
     }
   ];
 
@@ -110,6 +124,7 @@ const Projects = () => {
               description={project.description}
               technologies={project.technologies}
               link={project.link}
+              imageSrc={project.imageSrc}
               delay={0.1 * index}
             />
           ))}
