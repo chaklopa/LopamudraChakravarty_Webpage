@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const About = () => {
   return (
@@ -9,15 +10,14 @@ const About = () => {
         
         <div className="grid md:grid-cols-3 gap-8">
           <div className="md:col-span-1">
-            <div className="rounded-xl overflow-hidden bg-muted h-72 md:h-full flex items-center justify-center">
-              {/* Placeholder for profile image */}
-              <div className="text-center p-4">
-                <div className="w-24 h-24 md:w-32 md:h-32 bg-accent/20 rounded-full mx-auto flex items-center justify-center mb-4">
-                  <span className="text-4xl md:text-5xl font-medium text-accent">LC</span>
-                </div>
-                <p className="text-sm text-foreground/60">
-                  Add a professional headshot here
-                </p>
+            <div className="rounded-xl overflow-hidden bg-muted h-auto flex items-center justify-center p-4">
+              <div className="text-center">
+                <Avatar className="w-48 h-48 mx-auto border-2 border-accent/30">
+                  <AvatarImage src="/lovable-uploads/5357826a-39f0-49c3-9e58-e8c081d7f6d8.png" alt="Lopamudra Chakravarty" className="object-cover" />
+                  <AvatarFallback className="text-4xl font-medium">LC</AvatarFallback>
+                </Avatar>
+                <h3 className="mt-4 text-lg font-medium text-accent">Lopamudra Chakravarty</h3>
+                <p className="text-sm text-foreground/60">Product & Program Strategist</p>
               </div>
             </div>
           </div>
