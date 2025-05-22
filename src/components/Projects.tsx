@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ProjectCard = ({
   title,
@@ -16,6 +16,19 @@ const ProjectCard = ({
   imageSrc?: string;
   delay?: number;
 }) => {
+  const navigate = useNavigate();
+  
+  const handleViewProject = (e: React.MouseEvent, link: string) => {
+    e.preventDefault();
+    // If it's an external link (starts with http), open in new tab
+    if (link.startsWith('http')) {
+      window.open(link, '_blank');
+    } else {
+      // Otherwise navigate within the app
+      navigate(link);
+    }
+  };
+  
   return (
     <div 
       className="project-card fade-up" 
@@ -52,8 +65,7 @@ const ProjectCard = ({
           <div className="pt-4">
             <a 
               href={link} 
-              target="_blank" 
-              rel="noopener noreferrer"
+              onClick={(e) => handleViewProject(e, link)}
               className="text-accent hover:underline inline-flex items-center"
             >
               View Project
@@ -81,7 +93,7 @@ const Projects = () => {
         "GitHub Pages", 
         "Image Processing"
       ],
-      link: "#",
+      link: "https://example.com/momentoon",
       imageSrc: "/lovable-uploads/b988040e-c18e-436b-babf-ff6ed02a5e17.png"
     },
     {
@@ -93,7 +105,7 @@ const Projects = () => {
         "Statistical Analysis", 
         "Data Visualization"
       ],
-      link: "#",
+      link: "https://example.com/airbnb-analysis",
       imageSrc: "/lovable-uploads/9fe2207c-3601-4652-bb69-acbb15a7001c.png"
     },
     {
@@ -106,7 +118,7 @@ const Projects = () => {
         "Scikit-learn", 
         "Matplotlib"
       ],
-      link: "#",
+      link: "https://example.com/lung-cancer-prediction",
       imageSrc: "/lovable-uploads/852c2213-d519-4d55-bd3a-28a484024145.png"
     }
   ];

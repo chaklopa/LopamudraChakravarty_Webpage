@@ -10,6 +10,7 @@ const Hero = () => {
           src="/lovable-uploads/dec16b41-8233-47ee-aaff-a5e2ab20b1ae.png" 
           alt="Mountain landscape background" 
           className="w-full h-full object-cover opacity-40"
+          style={{ display: 'block' }} // Ensure image is displayed
         />
         <div className="absolute inset-0 bg-background/60 backdrop-blur-sm"></div>
       </div>

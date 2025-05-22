@@ -29,6 +29,17 @@ const Index = () => {
       observer.observe(section);
     });
     
+    // Force all images to load correctly
+    document.querySelectorAll('img').forEach(img => {
+      if (img.complete) {
+        img.style.display = 'block';
+      } else {
+        img.onload = () => {
+          img.style.display = 'block';
+        };
+      }
+    });
+    
     return () => observer.disconnect();
   }, []);
 
