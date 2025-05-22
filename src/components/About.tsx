@@ -13,7 +13,7 @@ const About = () => {
             <div className="rounded-xl overflow-hidden bg-muted h-auto flex items-center justify-center p-4">
               <div className="text-center">
                 <Avatar className="w-48 h-48 mx-auto border-2 border-accent/30">
-                  <AvatarImage src="/lovable-uploads/5357826a-39f0-49c3-9e58-e8c081d7f6d8.png" alt="Lopamudra Chakravarty" className="object-cover" />
+                  <AvatarImage src="/lovable-uploads/fb267380-8395-4f49-9e22-b2c1704bcd93.png" alt="Lopamudra Chakravarty" className="object-cover" />
                   <AvatarFallback className="text-4xl font-medium">LC</AvatarFallback>
                 </Avatar>
                 <h3 className="mt-4 text-lg font-medium text-accent">Lopamudra Chakravarty</h3>
@@ -32,7 +32,7 @@ const About = () => {
             </p>
             
             <p className="text-lg leading-relaxed">
-              Currently, I'm supporting AI-driven community and research initiatives at the Foster School of Business, where I co-lead student capacity-building efforts through hackathons, workshops, and AI-focused events.
+              Currently, I'm supporting AI-driven community and research initiatives at the Foster School of Business, where I'm part of the AI taskforce team which leads student capacity-building efforts through hackathons, workshops, and AI-focused events.
             </p>
             
             <p className="text-lg leading-relaxed">

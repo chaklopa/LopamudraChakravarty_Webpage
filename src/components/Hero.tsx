@@ -4,7 +4,16 @@ import { cn } from "@/lib/utils";
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex flex-col justify-center pt-16">
+    <section id="home" className="min-h-screen flex flex-col justify-center pt-16 relative">
+      <div className="absolute inset-0 z-[-1] overflow-hidden">
+        <img 
+          src="/lovable-uploads/dec16b41-8233-47ee-aaff-a5e2ab20b1ae.png" 
+          alt="Mountain landscape background" 
+          className="w-full h-full object-cover opacity-40"
+        />
+        <div className="absolute inset-0 bg-background/60 backdrop-blur-sm"></div>
+      </div>
+      
       <div className="container-custom">
         <div className="max-w-3xl">
           <h1 className="fade-up text-5xl md:text-6xl font-medium leading-tight md:leading-tight mb-4">

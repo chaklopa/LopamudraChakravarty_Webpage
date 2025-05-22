@@ -3,7 +3,16 @@ import React from 'react';
 
 const Contact = () => {
   return (
-    <section id="contact" className="section">
+    <section id="contact" className="section relative">
+      <div className="absolute inset-0 z-[-1] overflow-hidden">
+        <img 
+          src="/lovable-uploads/6df0884a-7262-4874-870b-82a9133a832c.png" 
+          alt="Seattle skyline" 
+          className="w-full h-full object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-background/70 backdrop-blur-sm"></div>
+      </div>
+      
       <div className="container-custom">
         <h2 className="section-title">Get In Touch</h2>
         
