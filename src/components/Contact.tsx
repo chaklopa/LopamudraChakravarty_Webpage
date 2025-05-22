@@ -6,9 +6,9 @@ const Contact = () => {
     <section id="contact" className="section relative">
       <div className="absolute inset-0 z-[-1] overflow-hidden">
         <img 
-          src="/lovable-uploads/6df0884a-7262-4874-870b-82a9133a832c.png" 
-          alt="Seattle skyline" 
-          className="w-full h-full object-cover opacity-30"
+          src="/lovable-uploads/33051f4f-ff30-4ca1-b3a1-358a0f122d60.png" 
+          alt="Seattle skyline at sunset" 
+          className="w-full h-full object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-background/70 backdrop-blur-sm"></div>
       </div>
