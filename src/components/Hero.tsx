@@ -7,12 +7,12 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex flex-col justify-center pt-16 relative">
       <div className="absolute inset-0 z-[-1] overflow-hidden">
         <img 
-          src="/lovable-uploads/f4c5f88c-5232-44dd-b3ac-a0ae420055c1.png" 
-          alt="Neah Bay background with person sitting in teal chair" 
+          src="/lovable-uploads/dec16b41-8233-47ee-aaff-a5e2ab20b1ae.png" 
+          alt="Mountain landscape background" 
           className="w-full h-full object-cover opacity-40"
           style={{ display: 'block' }} // Ensure image is displayed
         />
-        <div className="absolute inset-0 bg-background/70 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-background/60 backdrop-blur-sm"></div>
       </div>
       
       <div className="container-custom">
