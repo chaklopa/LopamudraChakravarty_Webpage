@@ -53,8 +53,8 @@ const Navbar = () => {
       scrolled ? "bg-background/90 backdrop-blur-md shadow-sm" : "bg-transparent"
     )}>
       <div className="container-custom flex items-center justify-between">
-        <a href="#home" className="font-heading font-medium text-xl">
-          LC<span className="text-accent">.</span>
+        <a href="#home" className="font-heading font-bold text-2xl">
+          LC<span className="text-amber-500">.</span>
         </a>
         
         {/* Mobile menu button */}
@@ -90,7 +90,7 @@ const Navbar = () => {
       
       {/* Mobile Navigation Drawer */}
       <div className={cn(
-        "fixed inset-0 bg-background z-40 transition-transform duration-300 md:hidden",
+        "fixed inset-0 bg-background/95 backdrop-blur-sm z-40 transition-transform duration-300 md:hidden",
         menuOpen ? "translate-x-0" : "translate-x-full"
       )}>
         <div className="h-full flex flex-col pt-20 px-8 space-y-6">

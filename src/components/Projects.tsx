@@ -1,5 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowUpRight } from "lucide-react";
 
 const ProjectCard = ({
   title,
@@ -7,6 +9,7 @@ const ProjectCard = ({
   technologies,
   link,
   imageSrc,
+  color = "amber",
   delay = 0
 }: {
   title: string;
@@ -14,6 +17,7 @@ const ProjectCard = ({
   technologies: string[];
   link?: string;
   imageSrc?: string;
+  color?: string;
   delay?: number;
 }) => {
   const navigate = useNavigate();
@@ -30,8 +34,8 @@ const ProjectCard = ({
   };
   
   return (
-    <div 
-      className="project-card fade-up" 
+    <Card 
+      className={`project-card border-${color}-500/20 hover:border-${color}-500/40 bg-gradient-to-br from-background to-secondary/50`}
       style={{ animationDelay: `${delay}s` }}
     >
       {imageSrc && (
@@ -39,22 +43,25 @@ const ProjectCard = ({
           <img 
             src={imageSrc} 
             alt={title} 
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center transition-transform hover:scale-105 duration-500"
           />
         </div>
       )}
-      <div className="p-6 md:p-8 space-y-4">
-        <h3 className="text-xl md:text-2xl font-medium">{title}</h3>
-        <p className="text-foreground/70 line-clamp-4">
+      <CardContent className="p-6 md:p-8 space-y-4">
+        <h3 className="text-xl md:text-2xl font-medium flex items-center justify-between">
+          <span>{title}</span>
+          <span className={`text-${color}-500`}>•</span>
+        </h3>
+        <p className="text-foreground/70 line-clamp-3">
           {description}
         </p>
         <div className="pt-2">
-          <p className="text-sm text-accent mb-2">Technologies</p>
+          <p className={`text-sm text-${color}-500 mb-2 font-medium`}>Technologies</p>
           <div className="flex flex-wrap gap-2">
             {technologies.map((tech, index) => (
               <span 
                 key={index} 
-                className="text-xs px-2 py-1 rounded-md bg-muted text-foreground/80"
+                className={`text-xs px-2 py-1 rounded-full bg-${color}-500/10 text-foreground/80 border border-${color}-500/20`}
               >
                 {tech}
               </span>
@@ -66,18 +73,15 @@ const ProjectCard = ({
             <a 
               href={link} 
               onClick={(e) => handleViewProject(e, link)}
-              className="text-accent hover:underline inline-flex items-center"
+              className={`text-${color}-500 hover:underline inline-flex items-center group`}
             >
               View Project
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-1">
-                <path d="M7 7h10v10" />
-                <path d="M7 17 17 7" />
-              </svg>
+              <ArrowUpRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </div>
         )}
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 };
 
@@ -85,7 +89,7 @@ const Projects = () => {
   const projects = [
     {
       title: "Momentoon – AI-Powered Visual Storytelling",
-      description: "Momentoon is a creative AI-driven storytelling platform that transforms personal photographs into cartoon-style visuals, enabling users to share emotionally resonant stories through comics, short videos, and social media posts. Designed for Gen Z and Millennials, the product bridges the gap between personal expression and digital creativity in a safe, engaging way.",
+      description: "Momentoon is a creative AI-driven storytelling platform that transforms personal photographs into cartoon-style visuals, enabling users to share emotionally resonant stories through comics, short videos, and social media posts.",
       technologies: [
         "DALLE-3", 
         "GPT-4", 
@@ -94,11 +98,12 @@ const Projects = () => {
         "Image Processing"
       ],
       link: "https://example.com/momentoon",
-      imageSrc: "/lovable-uploads/b988040e-c18e-436b-babf-ff6ed02a5e17.png"
+      imageSrc: "/lovable-uploads/b988040e-c18e-436b-babf-ff6ed02a5e17.png",
+      color: "amber"
     },
     {
       title: "Airbnb Market Analysis for Strategic Hosting",
-      description: "This project provides an end-to-end data-driven analysis for a hypothetical host to make informed pricing and listing decisions for her Airbnb property in the Seattle region. The dashboard explores patterns in review scores, pricing, super host trends, and competitor listings — offering strategic recommendations based on historical and geographic data.",
+      description: "This project provides an end-to-end data-driven analysis for a hypothetical host to make informed pricing and listing decisions for her Airbnb property in the Seattle region.",
       technologies: [
         "Tableau", 
         "Excel", 
@@ -106,11 +111,12 @@ const Projects = () => {
         "Data Visualization"
       ],
       link: "https://example.com/airbnb-analysis",
-      imageSrc: "/lovable-uploads/9fe2207c-3601-4652-bb69-acbb15a7001c.png"
+      imageSrc: "/lovable-uploads/9fe2207c-3601-4652-bb69-acbb15a7001c.png",
+      color: "cyan"
     },
     {
       title: "Predicting Lung Cancer Risk Using Machine Learning",
-      description: "This project explores how machine learning can be used to predict the risk and stage of lung cancer by analyzing patient data. Using a dataset with 26 attributes, we trained classification models to identify early-, mid-, and late-stage lung cancer based on symptoms, demographics, and lifestyle-related factors.",
+      description: "This project explores how machine learning can be used to predict the risk and stage of lung cancer by analyzing patient data using classification models.",
       technologies: [
         "Python", 
         "Pandas", 
@@ -119,7 +125,8 @@ const Projects = () => {
         "Matplotlib"
       ],
       link: "https://example.com/lung-cancer-prediction",
-      imageSrc: "/lovable-uploads/852c2213-d519-4d55-bd3a-28a484024145.png"
+      imageSrc: "/lovable-uploads/852c2213-d519-4d55-bd3a-28a484024145.png",
+      color: "purple"
     }
   ];
 
@@ -137,6 +144,7 @@ const Projects = () => {
               technologies={project.technologies}
               link={project.link}
               imageSrc={project.imageSrc}
+              color={project.color}
               delay={0.1 * index}
             />
           ))}

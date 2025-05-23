@@ -1,41 +1,64 @@
 
 import React from 'react';
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex flex-col justify-center pt-16 relative">
+    <section id="home" className="min-h-screen flex items-center pt-16 relative overflow-hidden">
       <div className="absolute inset-0 z-[-1] overflow-hidden">
         <img 
-          src="/lovable-uploads/dec16b41-8233-47ee-aaff-a5e2ab20b1ae.png" 
-          alt="Mountain landscape background" 
-          className="w-full h-full object-cover opacity-40"
-          style={{ display: 'block' }} // Ensure image is displayed
+          src="/lovable-uploads/5357826a-39f0-49c3-9e58-e8c081d7f6d8.png" 
+          alt="Abstract background" 
+          className="w-full h-full object-cover opacity-60"
+          style={{ display: 'block' }} 
         />
-        <div className="absolute inset-0 bg-background/60 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-background/70 backdrop-blur-[2px]"></div>
       </div>
       
       <div className="container-custom">
-        <div className="max-w-3xl">
-          <h1 className="fade-up text-5xl md:text-6xl font-medium leading-tight md:leading-tight mb-4">
-            Lopamudra Chakravarty<span className="text-accent">.</span>
-          </h1>
-          
-          <div className="fade-up" style={{ animationDelay: '0.1s' }}>
-            <p className="text-xl md:text-2xl font-light text-foreground/80 mb-6">
-              Product & Program Strategist | EdTech | AI Ops | Growth
-            </p>
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="space-y-6">
+            <h1 className="fade-up text-5xl md:text-6xl font-bold leading-tight md:leading-tight">
+              <span className="text-foreground">I'm </span>
+              <span className="text-amber-500">Lopamudra</span>
+              <span className="text-foreground">.</span>
+            </h1>
+            
+            <div className="fade-up" style={{ animationDelay: '0.1s' }}>
+              <p className="text-xl md:text-2xl font-light text-foreground/80 mb-6">
+                Product & Program Strategist | EdTech | AI Ops | Growth
+              </p>
+            </div>
+            
+            <div className="fade-up" style={{ animationDelay: '0.2s' }}>
+              <p className="text-lg text-foreground/70 mb-8 leading-relaxed max-w-xl">
+                Driving impact at the intersection of technology, education, and data with a track record across public, private, and academic sectors. Passionate about using systems thinking and AI to build smarter, scalable solutions.
+              </p>
+            </div>
+            
+            <div className="fade-up flex flex-wrap gap-4" style={{ animationDelay: '0.3s' }}>
+              <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white">
+                <a href="#projects">View Projects</a>
+              </Button>
+              <Button size="lg" variant="outline" className="border-amber-500 text-amber-500 hover:bg-amber-500/10">
+                <a href="#contact">Get in Touch</a>
+              </Button>
+            </div>
           </div>
           
-          <div className="fade-up" style={{ animationDelay: '0.2s' }}>
-            <p className="text-lg md:text-xl text-foreground/70 mb-8 md:pr-12 leading-relaxed">
-              Driving impact at the intersection of technology, education, and data with a track record across public, private, and academic sectors. Passionate about using systems thinking and AI to build smarter, scalable solutions for learning and innovation.
-            </p>
-          </div>
-          
-          <div className="fade-up space-x-4" style={{ animationDelay: '0.3s' }}>
-            <a href="#projects" className="button button-primary">View Projects</a>
-            <a href="#contact" className="button button-outline">Get in Touch</a>
+          <div className="relative hidden md:block">
+            <div className="absolute -inset-0.5 rounded-full bg-amber-500/30 blur-md"></div>
+            <div className="relative z-10 fade-up flex justify-center" style={{ animationDelay: '0.4s' }}>
+              <div className="rounded-full border-4 border-amber-500 overflow-hidden w-[350px] h-[350px]">
+                <img 
+                  src="/lovable-uploads/fb267380-8395-4f49-9e22-b2c1704bcd93.png" 
+                  alt="Lopamudra Chakravarty" 
+                  className="w-full h-full object-cover"
+                  style={{ display: 'block' }}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
