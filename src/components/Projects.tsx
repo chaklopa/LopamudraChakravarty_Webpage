@@ -10,7 +10,8 @@ const ProjectCard = ({
   link,
   imageSrc,
   color = "amber",
-  delay = 0
+  delay = 0,
+  projectId
 }: {
   title: string;
   description: string;
@@ -19,15 +20,19 @@ const ProjectCard = ({
   imageSrc?: string;
   color?: string;
   delay?: number;
+  projectId?: string;
 }) => {
   const navigate = useNavigate();
   
-  const handleViewProject = (e: React.MouseEvent, link: string) => {
+  const handleViewProject = (e: React.MouseEvent, link: string, projectId?: string) => {
     e.preventDefault();
     // If it's an external link (starts with http), open in new tab
-    if (link.startsWith('http')) {
+    if (link && link.startsWith('http')) {
       window.open(link, '_blank');
-    } else {
+    } else if (projectId) {
+      // Navigate to internal project detail page
+      navigate(`/project/${projectId}`);
+    } else if (link) {
       // Otherwise navigate within the app
       navigate(link);
     }
@@ -68,11 +73,11 @@ const ProjectCard = ({
             ))}
           </div>
         </div>
-        {link && (
+        {(link || projectId) && (
           <div className="pt-4">
             <a 
-              href={link} 
-              onClick={(e) => handleViewProject(e, link)}
+              href={link || `#/project/${projectId}`} 
+              onClick={(e) => handleViewProject(e, link || '', projectId)}
               className={`text-${color}-500 hover:underline inline-flex items-center group`}
             >
               View Project
@@ -97,7 +102,7 @@ const Projects = () => {
         "GitHub Pages", 
         "Image Processing"
       ],
-      link: "https://example.com/momentoon",
+      projectId: "momentoon",
       imageSrc: "/lovable-uploads/b988040e-c18e-436b-babf-ff6ed02a5e17.png",
       color: "amber"
     },
@@ -110,7 +115,7 @@ const Projects = () => {
         "Statistical Analysis", 
         "Data Visualization"
       ],
-      link: "https://example.com/airbnb-analysis",
+      projectId: "airbnb-analysis",
       imageSrc: "/lovable-uploads/9fe2207c-3601-4652-bb69-acbb15a7001c.png",
       color: "cyan"
     },
@@ -124,7 +129,7 @@ const Projects = () => {
         "Scikit-learn", 
         "Matplotlib"
       ],
-      link: "https://example.com/lung-cancer-prediction",
+      projectId: "lung-cancer-prediction",
       imageSrc: "/lovable-uploads/852c2213-d519-4d55-bd3a-28a484024145.png",
       color: "purple"
     }
@@ -142,7 +147,7 @@ const Projects = () => {
               title={project.title}
               description={project.description}
               technologies={project.technologies}
-              link={project.link}
+              projectId={project.projectId}
               imageSrc={project.imageSrc}
               color={project.color}
               delay={0.1 * index}

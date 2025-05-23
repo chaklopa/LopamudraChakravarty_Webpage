@@ -41,7 +41,7 @@ const Contact = () => {
           
           <div className="flex items-center justify-center space-x-6">
             <a 
-              href="#" 
+              href="https://www.linkedin.com/in/lopamudra1990/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-foreground/70 hover:text-amber-500 transition-colors"
@@ -50,7 +50,7 @@ const Contact = () => {
               <Linkedin size={24} />
             </a>
             <a 
-              href="#" 
+              href="https://github.com/chaklopa" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-foreground/70 hover:text-amber-500 transition-colors"
