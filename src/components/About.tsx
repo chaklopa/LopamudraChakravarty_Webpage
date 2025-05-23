@@ -1,17 +1,28 @@
 
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
+import { MapPin, GraduationCap, Briefcase, Calendar } from 'lucide-react';
 
-const QuickFactCard = ({ icon, title, description }: { icon: string, title: string, description: string }) => {
+const QuickFactCard = ({ 
+  icon: Icon, 
+  label, 
+  value, 
+  color = "amber" 
+}: {
+  icon: any;
+  label: string;
+  value: string;
+  color?: string;
+}) => {
   return (
-    <Card className="bg-secondary/70 hover:bg-secondary/90 border-amber-500/20 transition-all duration-300 hover:shadow-md hover:shadow-amber-500/10">
-      <CardContent className="p-6">
-        <div className="flex items-start space-x-4">
-          <div className="text-2xl text-amber-500">{icon}</div>
-          <div className="space-y-2">
-            <h3 className="font-medium text-lg">{title}</h3>
-            <p className="text-foreground/70">{description}</p>
-          </div>
+    <Card className="bg-secondary/30 border-secondary/50 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+      <CardContent className="p-4 flex items-center space-x-3">
+        <div className={`p-2 rounded-lg bg-${color}-500/20`}>
+          <Icon className={`h-5 w-5 text-${color}-500`} />
+        </div>
+        <div>
+          <p className="text-xs text-foreground/60 uppercase tracking-wide">{label}</p>
+          <p className="text-sm font-medium">{value}</p>
         </div>
       </CardContent>
     </Card>
@@ -21,68 +32,84 @@ const QuickFactCard = ({ icon, title, description }: { icon: string, title: stri
 const About = () => {
   const quickFacts = [
     {
-      icon: "🎓",
-      title: "Education",
-      description: "MBA from Foster School of Business, University of Washington"
+      icon: MapPin,
+      label: "Location",
+      value: "Seattle, WA",
+      color: "red"
     },
     {
-      icon: "🌏",
-      title: "Experience",
-      description: "7+ years across India and the U.S., public and private sectors"
+      icon: GraduationCap,
+      label: "Education",
+      value: "Master of Science in Information Systems",
+      color: "blue"
     },
     {
-      icon: "🚀",
-      title: "Industries",
-      description: "EdTech, Government, Academia, and Startups"
+      icon: Briefcase,
+      label: "Experience",
+      value: "6+ Years in Analytics",
+      color: "green"
     },
     {
-      icon: "💻",
-      title: "Tech Skills",
-      description: "Python, SQL, AI/ML, Prompt Engineering, Data Analysis"
-    },
-    {
-      icon: "📊",
-      title: "Leadership",
-      description: "Led growth strategies impacting 200+ partner centers"
-    },
-    {
-      icon: "💰",
-      title: "Impact",
-      description: "Helped save $5M+ in project costs through improved strategies"
+      icon: Calendar,
+      label: "Available",
+      value: "Open to Opportunities",
+      color: "purple"
     }
   ];
 
   return (
-    <section id="about" className="section bg-secondary/30">
+    <section id="about" className="section">
       <div className="container-custom">
         <h2 className="section-title">About Me</h2>
         
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="space-y-6">
-            <p className="text-lg leading-relaxed">
-              I'm Lopamudra Chakravarty — a full-stack product and program leader with 7+ years of experience transforming education and operational ecosystems across India and the U.S. I bring a unique cross-sector perspective, having worked with government ministries, high-growth edtech startups, and leading academic institutions like the University of Washington.
-            </p>
-            
-            <p className="text-lg leading-relaxed">
-              At Cuemath, I led growth and GTM strategies across 200+ partner centers, optimizing pricing, retention, and customer engagement. As a technical consultant with the Ministry of Education, I helped digitize operations across 7 states, saving $5M+ in project costs through improved procurement, forecasting, and logistics strategies.
-            </p>
-            
-            <p className="text-lg leading-relaxed">
-              Currently, I'm supporting AI-driven community and research initiatives at the Foster School of Business, where I'm part of the AI taskforce team which leads student capacity-building efforts through hackathons, workshops, and AI-focused events.
-            </p>
-          </div>
-          
-          <div>
-            <h3 className="text-2xl font-medium mb-6 text-amber-500">Quick Facts</h3>
-            <div className="grid grid-cols-1 gap-4">
+        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
+          {/* Quick Facts */}
+          <div className="lg:col-span-1 space-y-4">
+            <h3 className="text-xl font-medium mb-6">Quick Facts</h3>
+            <div className="grid gap-3">
               {quickFacts.map((fact, index) => (
-                <QuickFactCard 
+                <QuickFactCard
                   key={index}
                   icon={fact.icon}
-                  title={fact.title}
-                  description={fact.description}
+                  label={fact.label}
+                  value={fact.value}
+                  color={fact.color}
                 />
               ))}
+            </div>
+          </div>
+
+          {/* Main Content */}
+          <div className="lg:col-span-2 space-y-6">
+            <div className="text-lg leading-relaxed text-foreground/80">
+              <p className="mb-6">
+                Welcome! I'm a dedicated data analyst and project manager with over 6 years of experience 
+                transforming complex datasets into actionable business insights. Currently pursuing my 
+                Master of Science in Information Systems at the University of Washington, I specialize in 
+                data visualization, statistical analysis, and strategic project management.
+              </p>
+              
+              <p className="mb-6">
+                My journey spans diverse industries—from healthcare analytics at UW Medicine to retail 
+                insights at Lifestyle International—where I've consistently delivered data-driven solutions 
+                that drive growth and operational efficiency. I'm passionate about leveraging technology 
+                to solve real-world problems and create meaningful impact.
+              </p>
+
+              <p>
+                When I'm not diving deep into data or managing complex projects, you'll find me exploring 
+                the latest AI tools, practicing yoga, experimenting with new recipes, or sharing insights 
+                through my blog. I believe in continuous learning and bringing creativity to analytical thinking.
+              </p>
+            </div>
+
+            <div className="pt-4">
+              <h4 className="text-lg font-medium mb-3 text-amber-500">What I'm Looking For</h4>
+              <p className="text-foreground/70">
+                I'm actively seeking opportunities in data analysis, business intelligence, and project 
+                management roles where I can apply my analytical skills and leadership experience to 
+                drive business outcomes and mentor growing teams.
+              </p>
             </div>
           </div>
         </div>

@@ -7,10 +7,26 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeftIcon, ExternalLink, Github, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+// Define a proper type for project structure
+interface Project {
+  title: string;
+  description: string;
+  role: string;
+  technologies: string[];
+  imageSrc: string;
+  color: string;
+  liveLink?: string;
+  contributions?: string[];
+  features?: string[];
+  workflow?: string[];
+  results?: string[];
+  impact: string[] | string;
+}
+
 const ProjectDetail = () => {
   const { projectId } = useParams();
   
-  const projects = {
+  const projects: Record<string, Project> = {
     "momentoon": {
       title: "Momentoon – Reimagining Memories Through AI-Powered Visual Storytelling",
       description: "Momentoon is a creative AI-driven storytelling platform that transforms personal photographs into cartoon-style visuals, enabling users to share emotionally resonant stories through comics, short videos, and social media posts. Designed for Gen Z and Millennials, the product bridges the gap between personal expression and digital creativity in a safe, engaging way.",
@@ -22,7 +38,7 @@ const ProjectDetail = () => {
         "Analytics: User behavior tracking, market segmentation (planned)",
         "Design: Canva/Figma for mockups"
       ],
-      liveLink: "https://example.com/momentoon",
+      liveLink: "https://chaklopa.github.io/momentoon/",
       imageSrc: "/lovable-uploads/b988040e-c18e-436b-babf-ff6ed02a5e17.png",
       contributions: [
         "Defined and validated target user segments (Gen Z & Millennials) using social behavior data",
