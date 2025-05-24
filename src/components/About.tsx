@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -23,7 +22,7 @@ const About = () => {
     {
       icon: "🎓",
       title: "Education",
-      description: "MBA from Foster School of Business, University of Washington"
+      description: "MS in Information Systems from Foster School of Business, University of Washington (2023-2024)"
     },
     {
       icon: "🌏",
