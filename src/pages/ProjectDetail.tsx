@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -6,10 +7,25 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeftIcon, ExternalLink, Github, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+interface ProjectData {
+  title: string;
+  description: string;
+  role: string;
+  technologies: string[];
+  imageSrc: string;
+  color: string;
+  liveLink?: string;
+  contributions?: string[];
+  features?: string[];
+  workflow?: string[];
+  results?: string[];
+  impact: string[] | string;
+}
+
 const ProjectDetail = () => {
   const { projectId } = useParams();
   
-  const projects = {
+  const projects: Record<string, ProjectData> = {
     "momentoon": {
       title: "Momentoon – Reimagining Memories Through AI-Powered Visual Storytelling",
       description: "Momentoon is a creative AI-driven storytelling platform that transforms personal photographs into cartoon-style visuals, enabling users to share emotionally resonant stories through comics, short videos, and social media posts. Designed for Gen Z and Millennials, the product bridges the gap between personal expression and digital creativity in a safe, engaging way.",

@@ -69,11 +69,11 @@ const Hobbies = () => {
       links: [
         {
           text: "AI-Driven Productivity Highlights",
-          url: "https://i.postimg.cc/HkvTrJDG/AI-Driven-Productivity-Highlights-from-Our-Transformative-Luncheon.png"
+          url: "https://lifetimeexperiences28.blogspot.com/2024/11/ai-driven-productivity.html"
         },
         {
           text: "AI in Supply Chain Management",
-          url: "https://www.flipsnack.com/CD8EDEB569B/ai-in-supply-chain-management/full-view.html"
+          url: "https://lifetimeexperiences28.blogspot.com/2025/05/ai-in-supply-chain-management.html"
         }
       ]
     },
