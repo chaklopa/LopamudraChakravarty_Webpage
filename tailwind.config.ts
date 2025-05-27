@@ -21,7 +21,8 @@ export default {
 		extend: {
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
-				heading: ['Poppins', 'sans-serif'],
+				heading: ['Playfair Display', 'serif'],
+				serif: ['Playfair Display', 'serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -67,7 +68,46 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-        // Adding custom colors
+        // Botanical color palette
+        sage: {
+          '50': '#f7f9f7',
+          '100': '#eef3ee',
+          '200': '#d4e2d4',
+          '300': '#b8cfb8',
+          '400': '#8fb48f',
+          '500': '#6b966b',
+          '600': '#547854',
+          '700': '#456045',
+          '800': '#394d39',
+          '900': '#2f3f2f',
+          '950': '#1a221a',
+        },
+        forest: {
+          '50': '#f0f7f0',
+          '100': '#dcebdc',
+          '200': '#bad8ba',
+          '300': '#8fbd8f',
+          '400': '#619c61',
+          '500': '#407f40',
+          '600': '#316531',
+          '700': '#285028',
+          '800': '#224022',
+          '900': '#1d351d',
+          '950': '#0f1c0f',
+        },
+        emerald: {
+          '50': '#ecfdf5',
+          '100': '#d1fae5',
+          '200': '#a7f3d0',
+          '300': '#6ee7b7',
+          '400': '#34d399',
+          '500': '#10b981',
+          '600': '#059669',
+          '700': '#047857',
+          '800': '#065f46',
+          '900': '#064e3b',
+          '950': '#022c22',
+        },
         amber: {
           '50': '#fffbeb',
           '100': '#fef3c7',
@@ -137,13 +177,18 @@ export default {
 				'fade-up': {
 					'0%': { opacity: '0', transform: 'translateY(10px)' },
 					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out',
-				'fade-up': 'fade-up 0.7s ease-out'
+				'fade-up': 'fade-up 0.7s ease-out',
+				'float': 'float 6s ease-in-out infinite'
 			}
 		}
 	},

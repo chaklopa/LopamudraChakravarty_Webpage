@@ -51,16 +51,16 @@ const Navbar = () => {
   return (
     <header className={cn(
       "fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300",
-      scrolled ? "bg-background/90 backdrop-blur-md shadow-sm" : "bg-transparent"
+      scrolled ? "bg-background/95 backdrop-blur-md shadow-lg shadow-emerald-500/5 border-b border-emerald-500/10" : "bg-transparent"
     )}>
       <div className="container-custom flex items-center justify-between">
-        <a href="#home" className="font-heading font-bold text-2xl">
-          LC<span className="text-amber-500">.</span>
+        <a href="#home" className="font-serif font-bold text-2xl text-emerald-400 hover:text-emerald-300 transition-colors">
+          LC<span className="text-sage-400">.</span>
         </a>
         
         {/* Mobile menu button */}
         <button 
-          className="md:hidden text-foreground p-2"
+          className="md:hidden text-foreground p-2 hover:text-emerald-400 transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -79,7 +79,7 @@ const Navbar = () => {
               key={link.id}
               onClick={() => scrollToSection(link.id)}
               className={cn(
-                "nav-link",
+                "nav-link font-medium",
                 activeSection === link.id && "nav-link-active"
               )}
             >
@@ -91,7 +91,7 @@ const Navbar = () => {
       
       {/* Mobile Navigation Drawer */}
       <div className={cn(
-        "fixed inset-0 bg-background/95 backdrop-blur-sm z-40 transition-transform duration-300 md:hidden",
+        "fixed inset-0 bg-background/98 backdrop-blur-lg z-40 transition-transform duration-300 md:hidden",
         menuOpen ? "translate-x-0" : "translate-x-full"
       )}>
         <div className="h-full flex flex-col pt-20 px-8 space-y-6">
@@ -99,7 +99,7 @@ const Navbar = () => {
             <button
               key={link.id}
               onClick={() => scrollToSection(link.id)}
-              className="nav-link text-2xl w-full text-left py-3"
+              className="nav-link text-2xl w-full text-left py-3 font-medium hover:text-emerald-400 transition-colors"
             >
               {link.label}
             </button>

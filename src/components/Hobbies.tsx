@@ -13,12 +13,12 @@ interface HobbyCardProps {
 
 const HobbyCard = ({ emoji, title, description, colorClass, links }: HobbyCardProps) => {
   return (
-    <Card className={`border-${colorClass}/20 hover:border-${colorClass}/30 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-gradient-to-br from-background to-secondary/50`}>
+    <Card className={`border-${colorClass}/20 hover:border-${colorClass}/40 transition-all duration-300 hover:shadow-lg hover:shadow-${colorClass}/10 hover:-translate-y-1 bg-gradient-to-br from-background to-secondary/50 botanical-accent`}>
       <CardContent className="p-6 text-center space-y-4">
-        <div className={`mx-auto w-16 h-16 rounded-full bg-${colorClass}/20 flex items-center justify-center`}>
+        <div className={`mx-auto w-16 h-16 rounded-full bg-${colorClass}/20 flex items-center justify-center border border-${colorClass}/30`}>
           <span className="text-3xl">{emoji}</span>
         </div>
-        <h3 className={`text-xl font-medium text-${colorClass}`}>{title}</h3>
+        <h3 className={`text-xl font-serif font-medium text-${colorClass}`}>{title}</h3>
         <p className="text-foreground/70 leading-relaxed">{description}</p>
         {links && links.length > 0 && (
           <div className="pt-2 space-y-2">
@@ -28,7 +28,7 @@ const HobbyCard = ({ emoji, title, description, colorClass, links }: HobbyCardPr
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`inline-flex items-center text-sm text-${colorClass} hover:underline group`}
+                className={`inline-flex items-center text-sm text-${colorClass} hover:text-${colorClass}/80 hover:underline group transition-colors`}
               >
                 {link.text}
                 <ExternalLink className="ml-1 w-3 h-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -47,25 +47,25 @@ const Hobbies = () => {
       emoji: "🧘‍♀️",
       title: "Yoga & Meditation",
       description: "Finding calm and clarity through daily practice.",
-      colorClass: "amber-500"
+      colorClass: "emerald-500"
     },
     {
       emoji: "👩‍🍳",
       title: "Cooking",
       description: "Exploring new recipes and flavors as a creative outlet.",
-      colorClass: "cyan-500"
+      colorClass: "sage-500"
     },
     {
       emoji: "🤖",
       title: "Playing with AI",
       description: "Tinkering with AI tools to build and learn.",
-      colorClass: "purple-500"
+      colorClass: "forest-500"
     },
     {
       emoji: "✍️",
       title: "Blogging",
       description: "Writing insights and reflections on tech, growth, and life.",
-      colorClass: "amber-500",
+      colorClass: "emerald-500",
       links: [
         {
           text: "AI-Driven Productivity Highlights",
@@ -81,13 +81,13 @@ const Hobbies = () => {
       emoji: "💃",
       title: "Dancing",
       description: "Enjoying movement as a form of expression and joy.",
-      colorClass: "cyan-500"
+      colorClass: "sage-500"
     },
     {
       emoji: "🏔️",
       title: "Outdoor Activities",
       description: "Recharging through hikes, games, and fresh air.",
-      colorClass: "purple-500"
+      colorClass: "forest-500"
     }
   ];
 
