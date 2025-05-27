@@ -73,7 +73,7 @@ const Hobbies = () => {
         },
         {
           text: "AI in Supply Chain Management",
-          url: "https://i.postimg.cc/K8brVzRM/AI-in-Supply-Chain-Management.png"
+          url: "https://www.flipsnack.com/CD8EDEB569B/ai-in-supply-chain-management/full-view.html"
         }
       ]
     },
