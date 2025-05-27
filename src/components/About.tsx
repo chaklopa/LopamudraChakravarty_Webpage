@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -32,12 +33,12 @@ const About = () => {
     {
       icon: "🚀",
       title: "Industries",
-      description: "EdTech, Government, Academia, and Startups"
+      description: "Technology, Government, Academia, and Startups"
     },
     {
       icon: "💻",
       title: "Tech Skills",
-      description: "Python, SQL, AI/ML, Prompt Engineering, Data Analysis"
+      description: "Python, SQL, AI, Prompt Engineering, Data Analysis"
     },
     {
       icon: "📊",

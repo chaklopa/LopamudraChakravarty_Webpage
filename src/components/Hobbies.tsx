@@ -1,15 +1,17 @@
 
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
+import { ExternalLink } from 'lucide-react';
 
 interface HobbyCardProps {
   emoji: string;
   title: string;
   description: string;
   colorClass: string;
+  links?: { text: string; url: string }[];
 }
 
-const HobbyCard = ({ emoji, title, description, colorClass }: HobbyCardProps) => {
+const HobbyCard = ({ emoji, title, description, colorClass, links }: HobbyCardProps) => {
   return (
     <Card className={`border-${colorClass}/20 hover:border-${colorClass}/30 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-gradient-to-br from-background to-secondary/50`}>
       <CardContent className="p-6 text-center space-y-4">
@@ -18,6 +20,22 @@ const HobbyCard = ({ emoji, title, description, colorClass }: HobbyCardProps) =>
         </div>
         <h3 className={`text-xl font-medium text-${colorClass}`}>{title}</h3>
         <p className="text-foreground/70 leading-relaxed">{description}</p>
+        {links && links.length > 0 && (
+          <div className="pt-2 space-y-2">
+            {links.map((link, index) => (
+              <a
+                key={index}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex items-center text-sm text-${colorClass} hover:underline group`}
+              >
+                {link.text}
+                <ExternalLink className="ml-1 w-3 h-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            ))}
+          </div>
+        )}
       </CardContent>
     </Card>
   );
@@ -47,7 +65,17 @@ const Hobbies = () => {
       emoji: "✍️",
       title: "Blogging",
       description: "Writing insights and reflections on tech, growth, and life.",
-      colorClass: "amber-500"
+      colorClass: "amber-500",
+      links: [
+        {
+          text: "AI-Driven Productivity Highlights",
+          url: "https://i.postimg.cc/HkvTrJDG/AI-Driven-Productivity-Highlights-from-Our-Transformative-Luncheon.png"
+        },
+        {
+          text: "AI in Supply Chain Management",
+          url: "https://i.postimg.cc/K8brVzRM/AI-in-Supply-Chain-Management.png"
+        }
+      ]
     },
     {
       emoji: "💃",
@@ -76,6 +104,7 @@ const Hobbies = () => {
               title={hobby.title}
               description={hobby.description}
               colorClass={hobby.colorClass}
+              links={hobby.links}
             />
           ))}
         </div>
