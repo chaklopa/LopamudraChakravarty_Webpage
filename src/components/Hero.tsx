@@ -27,13 +27,13 @@ const Hero = () => {
             
             <div className="fade-up" style={{ animationDelay: '0.1s' }}>
               <p className="text-xl md:text-2xl font-light text-foreground/80 mb-6">
-                Product & Program Strategist | EdTech | AI Ops | Growth
+                Product & Program Strategist | AI Solutions | Tech Innovation | Business Growth
               </p>
             </div>
             
             <div className="fade-up" style={{ animationDelay: '0.2s' }}>
               <p className="text-lg text-foreground/70 mb-8 leading-relaxed max-w-xl">
-                Driving impact at the intersection of technology, education, and data with a track record across public, private, and academic sectors. Passionate about using systems thinking and AI to build smarter, scalable solutions.
+                Transforming business operations through AI-driven solutions and strategic technology implementations. Specialized in building scalable systems that leverage machine learning, data analytics, and automation to drive measurable business impact across enterprise and startup environments.
               </p>
             </div>
             
