@@ -8,8 +8,8 @@ const Contact = () => {
     <section id="contact" className="section relative">
       <div className="absolute inset-0 z-[-1] overflow-hidden">
         <img 
-          src="/lovable-uploads/6df0884a-7262-4874-870b-82a9133a832c.png" 
-          alt="Seattle skyline" 
+          src="/lovable-uploads/3ae82f98-12cc-4430-bd06-1201647b74c7.png" 
+          alt="Nature stream with flowing water and autumn trees" 
           className="w-full h-full object-cover opacity-30"
         />
         <div className="absolute inset-0 bg-background/70 backdrop-blur-sm"></div>
