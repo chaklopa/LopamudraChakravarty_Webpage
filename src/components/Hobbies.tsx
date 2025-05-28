@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink } from 'lucide-react';
@@ -57,7 +56,7 @@ const Hobbies = () => {
       links: [
         {
           text: "Cooking Adventures",
-          url: "https://lifetimeexperiences28.blogspot.com/2025/05/blog-post.html"
+          url: "https://lifetimeexperiences28.blogspot.com/2025/05/blog-post_28.html"
         }
       ]
     },
