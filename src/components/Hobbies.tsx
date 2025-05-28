@@ -53,13 +53,25 @@ const Hobbies = () => {
       emoji: "👩‍🍳",
       title: "Cooking",
       description: "Exploring new recipes and flavors as a creative outlet.",
-      colorClass: "sage-500"
+      colorClass: "sage-500",
+      links: [
+        {
+          text: "Cooking Adventures",
+          url: "https://lifetimeexperiences28.blogspot.com/2025/05/blog-post.html"
+        }
+      ]
     },
     {
       emoji: "🤖",
       title: "Playing with AI",
       description: "Tinkering with AI tools to build and learn.",
-      colorClass: "forest-500"
+      colorClass: "forest-500",
+      links: [
+        {
+          text: "GitHub Projects",
+          url: "https://github.com/chaklopa"
+        }
+      ]
     },
     {
       emoji: "✍️",
@@ -87,7 +99,13 @@ const Hobbies = () => {
       emoji: "🏔️",
       title: "Outdoor Activities",
       description: "Recharging through hikes, games, and fresh air.",
-      colorClass: "forest-500"
+      colorClass: "forest-500",
+      links: [
+        {
+          text: "Outdoor Adventures",
+          url: "https://lifetimeexperiences28.blogspot.com/2025/05/blog-post.html"
+        }
+      ]
     }
   ];
 
