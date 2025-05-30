@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -37,7 +36,6 @@ const ProjectDetail = () => {
         "Analytics: User behavior tracking, market segmentation (planned)",
         "Design: Canva/Figma for mockups"
       ],
-      liveLink: "https://example.com/momentoon",
       imageSrc: "/lovable-uploads/b988040e-c18e-436b-babf-ff6ed02a5e17.png",
       contributions: [
         "Defined and validated target user segments (Gen Z & Millennials) using social behavior data",
@@ -171,14 +169,7 @@ const ProjectDetail = () => {
               )}
               
               <div className="md:flex md:justify-between md:items-center mt-6">
-                {project.liveLink && (
-                  <Button asChild variant="outline" className={`border-${project.color}-500 text-${project.color}-500 hover:bg-${project.color}-500 hover:text-white`}>
-                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
-                      View Live Project
-                      <ExternalLink className="ml-2 h-4 w-4" />
-                    </a>
-                  </Button>
-                )}
+                
                 
                 <div className="flex mt-4 md:mt-0 gap-4">
                   <a 
